@@ -58,7 +58,7 @@ class DocSchema(formencode.Schema):
     lang = validators.String(not_empty=True, strip=True, if_missing='en')
 
     version = validators.String(
-        strip=True, if_missing=datetime.now().strftime('%s')
+        strip=True, if_missing=datetime.now().timestamp()
     )
 
     type = validators.OneOf(
